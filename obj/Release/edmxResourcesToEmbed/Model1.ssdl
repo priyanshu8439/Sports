@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sports_Zone_DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account_Details">
+    <Key>
+      <PropertyRef Name="AccName" />
+    </Key>
+    <Property Name="AccName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AccPassword" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AccPhone" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="AccAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AccEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdmId" />
+    </Key>
+    <Property Name="AdmId" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="AdmName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdmEmail" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AdmPassword" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="CarId" />
+    </Key>
+    <Property Name="CarId" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ProId" Type="nvarchar" MaxLength="10" />
+    <Property Name="CusId" Type="varchar" MaxLength="20" />
+    <Property Name="Quantity" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CatId" />
+    </Key>
+    <Property Name="CatId" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CatName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProId" Type="nvarchar" MaxLength="10" />
+    <Property Name="catDescription" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer_info">
+    <Key>
+      <PropertyRef Name="CusId" />
+    </Key>
+    <Property Name="CusId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" MaxLength="20" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="20" />
+    <Property Name="Phone" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="CusId" />
+    </Key>
+    <Property Name="CusId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ProId" Type="nvarchar" MaxLength="10" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="300" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="InvId" />
+    </Key>
+    <Property Name="InvId" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CusId" Type="varchar" MaxLength="20" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="ProId" Type="nvarchar" MaxLength="10" />
+    <Property Name="Quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="AdmName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdmPassword" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Orders_Details">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CusId" Type="varchar" MaxLength="20" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="ShippedDate" Type="datetime" Nullable="false" />
+    <Property Name="ShipName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ShipAddress" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ShipCity" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ShipPostalCode" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Payment_Id" />
+    </Key>
+    <Property Name="Payment_Id" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CusId" Type="varchar" MaxLength="20" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+    <Property Name="Payment_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProId" />
+    </Key>
+    <Property Name="ProId" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ProName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProDescription" Type="nvarchar" MaxLength="200" />
+    <Property Name="ProPrice" Type="money" />
+    <Property Name="Stock" Type="int" />
+    <Property Name="ProPic" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sports_Info">
+    <Key>
+      <PropertyRef Name="SpoId" />
+    </Key>
+    <Property Name="SpoId" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SpoName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SpoCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SpoGears" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SpoDescription" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Addresses">
+    <Key>
+      <PropertyRef Name="username" />
+      <PropertyRef Name="address" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_mobile_numbers">
+    <Key>
+      <PropertyRef Name="username" />
+      <PropertyRef Name="mobile_number" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="mobile_number" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="20" />
+    <Property Name="first_name" Type="varchar" MaxLength="20" />
+    <Property Name="last_name" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__Cart__CusId__367C1819">
+    <End Role="Customer_info" Type="Self.Customer_info" Multiplicity="0..1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_info">
+        <PropertyRef Name="CusId" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="CusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cart__ProId__37703C52">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProId" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="ProId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Categorie__ProId__06CD04F7">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Categories" Type="Self.Categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProId" />
+      </Principal>
+      <Dependent Role="Categories">
+        <PropertyRef Name="ProId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer___CusId__236943A5">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Customer_info" Type="Self.Customer_info" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Customer_info">
+        <PropertyRef Name="CusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Feedback__CusId__2B0A656D">
+    <End Role="Customer_info" Type="Self.Customer_info" Multiplicity="1" />
+    <End Role="Feedback" Type="Self.Feedback" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_info">
+        <PropertyRef Name="CusId" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="CusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Feedback__ProId__2BFE89A6">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProId" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="ProId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Invoice__CusId__2739D489">
+    <End Role="Customer_info" Type="Self.Customer_info" Multiplicity="0..1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_info">
+        <PropertyRef Name="CusId" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="CusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Invoice__ProId__282DF8C2">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProId" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="ProId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders_De__CusId__2FCF1A8A">
+    <End Role="Customer_info" Type="Self.Customer_info" Multiplicity="0..1" />
+    <End Role="Orders_Details" Type="Self.Orders_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_info">
+        <PropertyRef Name="CusId" />
+      </Principal>
+      <Dependent Role="Orders_Details">
+        <PropertyRef Name="CusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payment__CusId__32AB8735">
+    <End Role="Customer_info" Type="Self.Customer_info" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_info">
+        <PropertyRef Name="CusId" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="CusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Addr__usern__1CBC4616">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="User_Addresses" Type="Self.User_Addresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="User_Addresses">
+        <PropertyRef Name="username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_mobi__usern__208CD6FA">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="User_mobile_numbers" Type="Self.User_mobile_numbers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="User_mobile_numbers">
+        <PropertyRef Name="username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Sports_Zone_DbModelStoreContainer">
+    <EntitySet Name="Account_Details" EntityType="Self.Account_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_info" EntityType="Self.Customer_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders_Details" EntityType="Self.Orders_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sports_Info" EntityType="Self.Sports_Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Addresses" EntityType="Self.User_Addresses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_mobile_numbers" EntityType="Self.User_mobile_numbers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Cart__CusId__367C1819" Association="Self.FK__Cart__CusId__367C1819">
+      <End Role="Customer_info" EntitySet="Customer_info" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cart__ProId__37703C52" Association="Self.FK__Cart__ProId__37703C52">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Categorie__ProId__06CD04F7" Association="Self.FK__Categorie__ProId__06CD04F7">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Categories" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer___CusId__236943A5" Association="Self.FK__Customer___CusId__236943A5">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Customer_info" EntitySet="Customer_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Feedback__CusId__2B0A656D" Association="Self.FK__Feedback__CusId__2B0A656D">
+      <End Role="Customer_info" EntitySet="Customer_info" />
+      <End Role="Feedback" EntitySet="Feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Feedback__ProId__2BFE89A6" Association="Self.FK__Feedback__ProId__2BFE89A6">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Feedback" EntitySet="Feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Invoice__CusId__2739D489" Association="Self.FK__Invoice__CusId__2739D489">
+      <End Role="Customer_info" EntitySet="Customer_info" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Invoice__ProId__282DF8C2" Association="Self.FK__Invoice__ProId__282DF8C2">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders_De__CusId__2FCF1A8A" Association="Self.FK__Orders_De__CusId__2FCF1A8A">
+      <End Role="Customer_info" EntitySet="Customer_info" />
+      <End Role="Orders_Details" EntitySet="Orders_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payment__CusId__32AB8735" Association="Self.FK__Payment__CusId__32AB8735">
+      <End Role="Customer_info" EntitySet="Customer_info" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Addr__usern__1CBC4616" Association="Self.FK__User_Addr__usern__1CBC4616">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="User_Addresses" EntitySet="User_Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_mobi__usern__208CD6FA" Association="Self.FK__User_mobi__usern__208CD6FA">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="User_mobile_numbers" EntitySet="User_mobile_numbers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

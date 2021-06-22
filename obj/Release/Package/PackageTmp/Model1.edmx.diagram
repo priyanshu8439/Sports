@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a1fa61e3e2f64e93b449d85718fa044f" Name="Diagram1">
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.Account_Details" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.Cart" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.Category" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.Customer_info" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.Feedback" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.Invoice" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.Orders_Details" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.Payment" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.Product" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.Sports_Info" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.User_Addresses" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.User_mobile_numbers" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.User" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <AssociationConnector Association="Sports_Zone_DbModel.FK__Cart__CusId__367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="Sports_Zone_DbModel.FK__Cart__ProId__37703C52" ManuallyRouted="false" />
+        <AssociationConnector Association="Sports_Zone_DbModel.FK__Categorie__ProId__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="Sports_Zone_DbModel.FK__Customer___CusId__236943A5" ManuallyRouted="false" />
+        <AssociationConnector Association="Sports_Zone_DbModel.FK__Feedback__CusId__2B0A656D" ManuallyRouted="false" />
+        <AssociationConnector Association="Sports_Zone_DbModel.FK__Invoice__CusId__2739D489" ManuallyRouted="false" />
+        <AssociationConnector Association="Sports_Zone_DbModel.FK__Orders_De__CusId__2FCF1A8A" ManuallyRouted="false" />
+        <AssociationConnector Association="Sports_Zone_DbModel.FK__Payment__CusId__32AB8735" ManuallyRouted="false" />
+        <AssociationConnector Association="Sports_Zone_DbModel.FK__Feedback__ProId__2BFE89A6" ManuallyRouted="false" />
+        <AssociationConnector Association="Sports_Zone_DbModel.FK__Invoice__ProId__282DF8C2" ManuallyRouted="false" />
+        <AssociationConnector Association="Sports_Zone_DbModel.FK__User_Addr__usern__1CBC4616" ManuallyRouted="false" />
+        <AssociationConnector Association="Sports_Zone_DbModel.FK__User_mobi__usern__208CD6FA" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.Admin" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Sports_Zone_DbModel.Login" Width="1.5" PointX="7.375" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
